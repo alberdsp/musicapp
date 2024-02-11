@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class XilofonoForm extends StatelessWidget {
-  // Cargamos los archivos de audio y las imágenes
-  String sonido1 = 'assets/media/note1.wav';
-  String sonido2 = 'assets/media/note2.wav';
-  String sonido3 = 'assets/media/note3.wav';
-  String sonido4 = 'assets/media/note4.wav';
-  String sonido5 = 'assets/media/note5.wav';
-  String sonido6 = 'assets/media/note6.wav';
-  String sonido7 = 'assets/media/note7.wav';
+  // Cargamos los archivos de audio
+  // importante no se incluye assets en los audios
+  String sonido1 = 'media/note1.wav';
+  String sonido2 = 'media/note2.wav';
+  String sonido3 = 'media/note3.wav';
+  String sonido4 = 'media/note4.wav';
+  String sonido5 = 'media/note5.wav';
+  String sonido6 = 'media/note6.wav';
+  String sonido7 = 'media/note7.wav';
 
   // Función que construye botón expandido
   Expanded buildKey(Color colors, String nombreArchivoAudio) {
@@ -19,8 +20,9 @@ class XilofonoForm extends StatelessWidget {
         onPressed: () {
           // Crea una instancia de AudioPlayer para cargar y reproducir el archivo de audio
           final player = AudioPlayer();
+
           // Reproduce el archivo de audio cuando se presiona el botón
-          player.play(DeviceFileSource(nombreArchivoAudio));
+          player.play(AssetSource(nombreArchivoAudio));
         },
         child: Text(''),
       ), // TextButton
@@ -31,7 +33,7 @@ class XilofonoForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tocar la guitarra'),
+        title: const Text('Tocar el xilófono'),
       ),
       body: Center(
         child: Column(

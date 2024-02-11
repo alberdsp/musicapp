@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const MyHomePage(title: 'My sound app'),
+      home: const MyHomePage(title: 'My sound app 2024'),
     );
   }
 }

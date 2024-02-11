@@ -3,9 +3,9 @@ import 'package:audioplayers/audioplayers.dart';
 
 class BongosForm extends StatelessWidget {
   // Cargamos los archivos de audio y las imágenes
-
-  String bongo1 = 'assets/media/bongo1.wav';
-  String bongo2 = 'assets/media/bongo2.wav';
+  // importante no se incluye assets en los audios
+  String bongo1 = 'media/bongo1.wav';
+  String bongo2 = 'media/bongo2.wav';
   String imgbongo1 = 'assets/media/bongo1.png';
   String imgbongo2 = 'assets/media/bongo2.png';
 
@@ -16,7 +16,7 @@ class BongosForm extends StatelessWidget {
         onPressed: () {
           // Crea una instancia de AudioPlayer para cargar y reproducir el archivo de audio
           final player = AudioPlayer();
-          player.play(DeviceFileSource(nombreArchivoAudio));
+          player.play(AssetSource(nombreArchivoAudio));
 
           // Reproduce el archivo de audio cuando se presiona el botón
           //  player.play(DeviceFileSource(nombreArchivoAudio));
