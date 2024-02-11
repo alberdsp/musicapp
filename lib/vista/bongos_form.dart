@@ -16,8 +16,10 @@ class BongosForm extends StatelessWidget {
         onPressed: () {
           // Crea una instancia de AudioPlayer para cargar y reproducir el archivo de audio
           final player = AudioPlayer();
-          // Reproduce el archivo de audio cuando se presiona el botón
           player.play(DeviceFileSource(nombreArchivoAudio));
+
+          // Reproduce el archivo de audio cuando se presiona el botón
+          //  player.play(DeviceFileSource(nombreArchivoAudio));
         },
         child: imagen, // Utiliza la imagen como contenido del botón
       ), // TextButton

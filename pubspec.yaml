@@ -69,13 +69,16 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/media/xilofono.png
-   - assets/media/guitarra.png
-   - assets/media/bongos.png
-   - assets/media/bongo1.png
-   - assets/media/bongo2.png
-   - assets/media/bongo1.wav
-   - assets/media/bongo2.wav
+    - assets/media/
+    - assets/media/chord-A.wav
+    - assets/media/chord-C.wav
+    - assets/media/chord-D.wav
+    - assets/media/chord-E.wav
+    - assets/media/chord-F.wav
+    - assets/media/chord-G.wav
+    - assets/media/bongo1.wav
+    - assets/media/bongo2.wav
+   
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

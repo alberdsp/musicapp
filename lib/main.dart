@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
 
                   MaterialPageRoute(
                       builder: (context) =>
-                          const XilofonoForm()), // creamos una nueva instancia de la pantalla XilofonoForm
+                          XilofonoForm()), // creamos una nueva instancia de la pantalla XilofonoForm
                 );
               },
               child: Image.asset('assets/media/xilofono.png',
@@ -77,7 +77,7 @@ class MyHomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const GuitarraForm()),
+                  MaterialPageRoute(builder: (context) => GuitarraForm()),
                 );
               },
               child: Image.asset('assets/media/guitarra.png',
