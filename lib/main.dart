@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+// hacemos la importación de las clases de las pantallas
+import 'vista/xilofono_form.dart';
+import 'vista/bongos_form.dart';
+import 'vista/guitarra_form.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -7,12 +12,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // aplicacion principal
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplicación Xilófono',
+      title: 'Aplicación de Sonidos',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
@@ -21,51 +24,60 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Clase principal
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
-  // Pantalla principal
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-      ), // Barra superior de la app
-
-      // Cuerpo de la app con tres botones
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Botones con imágenes de los instrumentos
+            // agregamos los gestos para que al dar clic en la imagen
+            // nos lleve a la pantalla correspondiente
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => XilofonoForm()),
+
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          const XilofonoForm()), // creamos una nueva instancia de la pantalla XilofonoForm
                 );
               },
               child: Image.asset('assets/media/xilofono.png',
                   width: 150, height: 150),
-            ), // botón detección de gestos
+            ),
+
+            // agregamos los gestos para que al dar clic en la imagen
+            // nos lleve a la pantalla correspondiente
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BongosForm()),
+
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          BongosForm()), // creamos una nueva instancia de la pantalla BongosForm
                 );
               },
               child: Image.asset('assets/media/bongos.png',
                   width: 150, height: 150),
-            ), // botón detección de gestos
+            ),
+
+            // agregamos los gestos para que al dar clic en la imagen
+            // nos lleve a la pantalla correspondiente
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => GuitarraForm()),
+                  MaterialPageRoute(builder: (context) => const GuitarraForm()),
                 );
               },
               child: Image.asset('assets/media/guitarra.png',
@@ -73,60 +85,6 @@ class MyHomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-/**
- * Clase para las pantalla del xilófono
- */
-
-class XilofonoForm extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Tocar Xilófono'),
-      ),
-      body: Center(
-        child: Text('Esta es la pantalla del xilófono'),
-      ),
-    );
-  }
-}
-
-/**
- * Clase para las pantalla de los bongos
- */
-
-class BongosForm extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Tocar Bongos'),
-      ),
-      body: Center(
-        child: Text('Esta es la pantalla de los bongos'),
-      ),
-    );
-  }
-}
-
-/**
- * Clase para las pantalla de la guitarra
- */
-
-class GuitarraForm extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Tocar Guitarra'),
-      ),
-      body: Center(
-        child: Text('Esta es la pantalla de la guitarra'),
       ),
     );
   }
